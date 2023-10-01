@@ -2,6 +2,71 @@
   text-align: center;
 }
 
+/* CSS */
+
+.syle_currency{
+
+    width: 50px; /* Set the desired width */
+    height: auto; /* Auto height */
+    text-align: center;
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+
+}
+
+.custom-select {
+    display: inline-block;
+    width: 200px; /* Set the desired width */
+    height: auto; /* Auto height */
+    border: 2px solid #007BFF;
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  .custom-select-label {
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Add space between label and dropdown */
+  }
+  
+  .custom-select-dropdown {
+    width: 100%; /* Make the dropdown fill the entire width of the container */
+    height: 4em; /* Set the height to 3 times the font size */
+    border: none; /* Remove the default border */
+    background-color: #1cf81c8c; /* Set the background color */
+    color: #333; /* Set the text color */
+    padding: 5px; /* Adjust padding as needed */
+    text-align: center;
+    border-radius: 10px;
+    
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+
+/* Corrected class names */
+
+.drop-down-style {
+    width: 200px; /* Set the desired width */
+    border: 2px solid #99405b;
+    background-color: #1bd31b;
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .drop-down-style2 {
+    width: 200px; /* Set the desired width */
+    border: 2px solid #33ff00;
+    background-color: white;
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  
+  
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

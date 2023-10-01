@@ -1,11 +1,30 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';/*This code imports the necessary modules from the 'react' library.
+It imports createContext and useReducer, which are used to create a
+context and manage state with a reducer, respectively. */
 
 // 5. The reducer - this is used to update the state, based on the action
+
+/*This is a reducer function named AppReducer. A reducer is a pure 
+function that takes the current state and an action as parameters and
+ returns a new state based on the action type. In this reducer, 
+ various action types like 'ADD_EXPENSE', 'RED_EXPENSE', 
+ 'DELETE_EXPENSE', and 'CHG_CURRENCY' are handled to update the
+  application's state.*/
 export const AppReducer = (state, action) => {
+        /*This line exports a function named AppReducer. In Redux, a 
+    reducer is a pure JavaScript function that takes two arguments:
+     state and action. The state argument represents the current 
+     state of your application, and the action argument is an 
+     object that describes what kind of state change should occur.*/
     let budget = 0;
+
+        /*This line begins a switch statement based on the type property 
+    of the action object. In Redux, actions are plain JavaScript 
+    objects that contain a type property, which describes the action
+     to be taken.*/
     switch (action.type) {
-        case 'ADD_EXPENSE':
-            let total_budget = 0;
+        case 'ADD_EXPENSE': //ADD_EXPENSE is property type of Action
+            let total_budget = 0; //inializes budget to 0
             total_budget = state.expenses.reduce(
                 (previousExp, currentExp) => {
                     return previousExp + currentExp.cost
@@ -22,7 +41,7 @@ export const AppReducer = (state, action) => {
                     return currentExp
                 });
                 return {
-                    ...state,
+                    ...state,  //The return statement returns a new state object using the spread operator (...state) to copy the existing state properties. This is also a common pattern in Redux reducer functions. It ensures that you maintain immutability by creating a new state object with the updated values.
                 };
             } else {
                 alert("Cannot increase the allocation! Out of funds");
@@ -90,8 +109,16 @@ const initialState = {
 };
 
 // 2. Creates the context this is the thing our components import and use to get the state
+/*This line creates a React context called AppContext using the createContext 
+function. A context is a way to share state data between components 
+without having to pass props manually through each level of the 
+component tree. Components that need access to this context will
+ import it and use it to access the state provided by the context.*/
 export const AppContext = createContext();
-
+/*This line defines a React component called AppProvider. The AppProvider
+ component serves as the provider for the context and wraps the 
+ components that need access to the state. It accepts props as its 
+ argument, which is a common pattern for React components.*/
 // 3. Provider component - wraps the components we want to give access to the state
 // Accepts the children, which are the nested(wrapped) components
 export const AppProvider = (props) => {
